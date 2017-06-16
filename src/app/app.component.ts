@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isAdmin: boolean = false;
+  adminMode(){
+    if(this.isAdmin === false){
+      this.isAdmin = true;
+    } else {
+      this.isAdmin = false;
+    }
+  }
 }
