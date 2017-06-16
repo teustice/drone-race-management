@@ -30,4 +30,11 @@ export class PilotService {
   getPilotById(pilotId: string){
     return this.database.object('pilots/' + pilotId);
   }
+
+  updatePilot(localPilot){
+    var pilotEntryInFirebase = this.getPilotById(localPilot.$key);
+    pilotEntryInFirebase.update({name: localPilot.name,
+                                weightClass: localPilot.weightClass,
+                                frequency: localPilot.frequency});
+  }
 }

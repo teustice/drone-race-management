@@ -3,6 +3,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Pilot } from '../pilot.model';
 import { PilotService } from '../pilot.service';
+import { FirebaseListObservable } from 'angularfire2/database';
+
 
 @Component({
   selector: 'app-pilot-details',
@@ -17,8 +19,17 @@ export class PilotDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((urlParams) => {
       this.pilotId = urlParams['id']
-    });
-    this.pilotToDisplay = this.pilotService.getPilotById(this.pilotId);
+    })
+
+    this.pilotService.getPilotById(this.pilotId).subscribe(data => {
+      this.pilotToDisplay = data;
+    })
+
+    console.log(this.pilotToDisplay.name);
+  }
+
+  updatePilot(pilot){
+    this.pilotService.updatePilot(pilot);
   }
 
 }

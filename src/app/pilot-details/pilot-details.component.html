@@ -1,5 +1,24 @@
 <div>
-  <h3>Pilot Name: {{(pilotToDisplay | async)?.name}}</h3>
-  <h4>Weight Class: {{(pilotToDisplay | async)?.weightClass}}g</h4>
-  <p>Frequency Assigned: {{(pilotToDisplay | async)?.frequency}}Mhz</p>
+  <h3>Pilot Name: {{pilotToDisplay.name}}</h3>
+  <h4>Weight Class: {{pilotToDisplay.weightClass}}g</h4>
+  <p>Frequency Assigned: {{pilotToDisplay.frequency}}Mhz</p>
+</div>
+<button (click)="this.pilotService.adminMode()">Toggle Admin Mode</button>
+
+<div *ngIf="this.pilotService.isAdmin">
+  <h4>Edit {{(pilotToDisplay | async)?.name}}</h4>
+
+  <label>Pilot Name</label>
+  <input [(ngModel)]="pilotToDisplay.name">
+  <br>
+
+  <label>Weight Class</label>
+  <input [(ngModel)]="pilotToDisplay.weightClass">
+  <br>
+
+  <label>Designated Frequency</label>
+  <input [(ngModel)]="pilotToDisplay.frequency">
+
+  <button (click)="updatePilot(pilotToDisplay)">Update</button>
+
 </div>
