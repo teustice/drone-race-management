@@ -1,4 +1,28 @@
 <h1>Current Pilots</h1>
+<button (click)="this.pilotService.adminMode()">Toggle Admin Mode</button>
+
 <ul>
   <li *ngFor="let pilot of pilots | async">{{pilot.name}} | {{pilot.weightClass}} | {{pilot.frequency}}</li>
 </ul>
+
+<div *ngIf="this.pilotService.isAdmin">
+  <h3>Register A New Pilot</h3>
+  <div>
+    <label>Pilot Name:</label>
+    <br>
+    <input #name>
+  </div>
+
+  <div>
+    <label>Drone Weight Class:</label>
+    <br>
+    <input #weight>
+  </div>
+
+  <div>
+    <label>Assign 5.8Ghz Frequency:</label>
+    <br>
+    <input #frequency>
+  </div>
+  <button (click)="submitForm(name.value, weight.value, frequency.value); name.value=''; weight.value=''; frequency.value=''">Add</button>
+</div>

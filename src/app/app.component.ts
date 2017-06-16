@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
+import { PilotService } from './pilot.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [PilotService]
 })
 export class AppComponent {
-  isAdmin: boolean = false;
-  adminMode(){
-    if(this.isAdmin === false){
-      this.isAdmin = true;
-    } else {
-      this.isAdmin = false;
-    }
-  }
+  constructor(private pilotService: PilotService) {}
+  
 }
