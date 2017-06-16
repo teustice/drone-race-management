@@ -2,7 +2,7 @@
 <button (click)="this.pilotService.adminMode()">Toggle Admin Mode</button>
 
 <ul>
-  <li *ngFor="let pilot of pilots | async">{{pilot.name}} | {{pilot.weightClass}} | {{pilot.frequency}}</li>
+  <li *ngFor="let pilot of pilots | async" (click)="goToDetailPage(pilot)"><a>{{pilot.name}} | {{pilot.weightClass}}g | {{pilot.frequency}}Mhz</a></li>
 </ul>
 
 <div *ngIf="this.pilotService.isAdmin">

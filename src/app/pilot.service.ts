@@ -26,4 +26,8 @@ export class PilotService {
       this.isAdmin = false;
     }
   }
+
+  getPilotById(pilotId: string){
+    return this.database.object('pilots/' + pilotId);
+  }
 }

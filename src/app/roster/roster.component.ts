@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PilotService } from '../pilot.service';
 import { Pilot } from '../pilot.model';
 import { FirebaseListObservable } from 'angularfire2/database';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-roster',
@@ -11,7 +12,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class RosterComponent implements OnInit {
   pilots: FirebaseListObservable<any[]>;
-  constructor(private pilotService: PilotService) { }
+  constructor(private pilotService: PilotService, private router: Router) { }
 
   ngOnInit() {
     this.pilots = this.pilotService.getPilots();
@@ -21,4 +22,8 @@ export class RosterComponent implements OnInit {
     var newPilot: Pilot = new Pilot(name, weight, frequency);
     this.pilotService.addPilot(newPilot);
   }
+
+  goToDetailPage(clickedPilot) {
+    this.router.navigate(['roster', clickedPilot.$key]);
+  };
 }
