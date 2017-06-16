@@ -20,5 +20,6 @@
   <input [(ngModel)]="pilotToDisplay.frequency">
 
   <button (click)="updatePilot(pilotToDisplay)">Update</button>
-
+  <br>
+  <button routerLink="/roster" (click)="deletePilot(pilotToDisplay)">Delete</button>
 </div>

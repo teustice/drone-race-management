@@ -37,4 +37,10 @@ export class PilotService {
                                 weightClass: localPilot.weightClass,
                                 frequency: localPilot.frequency});
   }
+
+  deletePilot(pilot){
+    var storedPilot = this.getPilotById(pilot.$key);
+    storedPilot.remove();
+  }
+
 }

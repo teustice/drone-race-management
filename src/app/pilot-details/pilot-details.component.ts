@@ -32,4 +32,9 @@ export class PilotDetailsComponent implements OnInit {
     this.pilotService.updatePilot(pilot);
   }
 
+  deletePilot(pilot){
+    if(confirm("Are you sure you want to delete this pilot?")){
+      this.pilotService.deletePilot(pilot);
+    }
+  }
 }
