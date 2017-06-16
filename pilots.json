@@ -2,22 +2,26 @@
   {
     "name": "Pilot1",
     "weightClass": "250",
-    "frequency": "5720"
+    "frequency": "5720",
+    "image": "http://bestdroneforthejob.com/wp-content/uploads/2015/06/Helipal-Storm-Type-A-Racing-Drone-in-hand.jpeg"
   },
   {
     "name": "Pilot2",
     "weightClass": "500",
-    "frequency": "5870"
+    "frequency": "5870",
+    "image": "http://dronereview.com/wp-content/uploads/2017/02/drone_racing2.jpg"
   },
   {
     "name": "Pilot3",
     "weightClass": "500",
-    "frequency": "5720"
+    "frequency": "5720",
+    "image": "http://www.radioc.co.uk/v/vspfiles/photos/5555-2.jpg"
   },
   {
     "name": "Pilot4",
     "weightClass": "250",
-    "frequency": "5870"
+    "frequency": "5870",
+    "image": "http://www.dragonflyracingdrones.com/wp-content/uploads/2015/02/Black-Darter-V3-3.jpg"
   }
   ]
 }

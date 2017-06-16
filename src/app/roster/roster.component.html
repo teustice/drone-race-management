@@ -1,16 +1,12 @@
 <h1>Current Pilots</h1>
-<button (click)="this.pilotService.adminMode()">Toggle Admin Mode</button>
+<a class="f6 b bt bb f5-l link bg-animate black-80 hover-bg-light-green dib pa3 ph4-l" (click)="this.pilotService.adminMode()">Toggle Admin Mode</a>
 
-<select (change)="onChange($event.target.value)">
+<select class="btn" (change)="onChange($event.target.value)">
   <option value="all" selected="selected">All Pilots</option>
   <option value="250">250g Class</option>
   <option value="500">500g Class</option>
   <option value="750" >750g Class</option>
 </select>
-
-<ul>
-  <li *ngFor="let pilot of pilots | weight:weightSelected" (click)="goToDetailPage(pilot)"><a>{{pilot.name}} | {{pilot.weightClass}}g | {{pilot.frequency}}Mhz</a></li>
-</ul>
 
 <div *ngIf="this.pilotService.isAdmin">
   <h3>Register A New Pilot</h3>
@@ -35,5 +31,27 @@
     <br>
     <input #frequency>
   </div>
-  <button (click)="submitForm(name.value, weight.value, frequency.value); name.value=''; weight.value=''; frequency.value=''">Add</button>
+
+  <div>
+    <label>Image URL:</label>
+    <br>
+    <input #image>
+  </div>
+  <br>
+  <a class="f6 bt bb f5-l link bg-animate black-80 hover-bg-light-green dib pa3 ph4-l" (click)="submitForm(name.value, weight.value, frequency.value, image.value); name.value=''; weight.value=''; frequency.value=''; image.value=''">Add</a>
 </div>
+
+
+<section class="cf w-100 pa2-ns">
+  <article (click)="goToDetailPage(pilot)" *ngFor="let pilot of pilots | weight:weightSelected"  class="fl w-100 w-50-m  w-25-ns pa2-ns">
+    <div class="aspect-ratio aspect-ratio--1x1">
+      <img [ngStyle]="{'background-image': 'url(' + pilot.image + ')'}"
+      class="db bg-center cover aspect-ratio--object" />
+    </div>
+    <a class="ph2 ph0-ns pb3 link db">
+      <h3 class="f5 f4-ns mb0 black-90">{{pilot.name}}</h3>
+      <h3 class="f6 f5-ns fw4 mt2 black-60">Weight Class: {{pilot.weightClass}}g</h3>
+      <h3 class="f6 f5-ns fw4 mt2 black-60">Designated Frequency: {{pilot.frequency}}Mhz</h3>
+    </a>
+  </article>
+</section>

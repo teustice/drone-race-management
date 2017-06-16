@@ -1,3 +1,10 @@
-<div class="container">
-  <router-outlet></router-outlet>
+<div class="background">
+  <div class="global-container">
+    <router-outlet></router-outlet>
+  </div>
+  <nav class="bt bb tc mw7 center mt6 bottom-nav">
+    <a class="f6 f5-l link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" href="/"><h5>Home</h5></a>
+    <a routerLink="roster" class="f6 f5-l link bg-animate black-80 hover-bg-light-green dib pa3 ph4-l" href="/portfolio"><h5>Pilot Roster</h5></a>
+    <a routerLink="about" class="f6 f5-l link bg-animate black-80 hover-bg-light-blue dib pa3 ph4-l" href="/shop"><h5>Learn More</h5></a>
+  </nav>
 </div>

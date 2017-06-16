@@ -1,25 +1,36 @@
-<div>
-  <h3>Pilot Name: {{pilotToDisplay.name}}</h3>
-  <h4>Weight Class: {{pilotToDisplay.weightClass}}g</h4>
-  <p>Frequency Assigned: {{pilotToDisplay.frequency}}Mhz</p>
-</div>
-<button (click)="this.pilotService.adminMode()">Toggle Admin Mode</button>
+<div class="details-container">
+  <div>
+    <br>
+    <img id="details-img" src="{{pilotToDisplay.image}}">
+    <h3>Pilot Name: {{pilotToDisplay.name}}</h3>
+    <h4>Weight Class: {{pilotToDisplay.weightClass}}g</h4>
+    <p>Frequency Assigned: {{pilotToDisplay.frequency}}Mhz</p>
+  </div>
+  <a class="f6 b bt bb f5-l link bg-animate black-80 hover-bg-light-green dib pa3 ph4-l" (click)="this.pilotService.adminMode()">Toggle Admin Mode</a>
 
-<div *ngIf="this.pilotService.isAdmin">
-  <h4>Edit {{(pilotToDisplay | async)?.name}}</h4>
+  <div *ngIf="this.pilotService.isAdmin">
+    <h4>Edit {{(pilotToDisplay | async)?.name}}</h4>
 
-  <label>Pilot Name</label>
-  <input [(ngModel)]="pilotToDisplay.name">
-  <br>
+    <label>Pilot Name</label>
+    <input [(ngModel)]="pilotToDisplay.name">
+    <br>
 
-  <label>Weight Class</label>
-  <input [(ngModel)]="pilotToDisplay.weightClass">
-  <br>
+    <label>Weight Class</label>
+    <select [(ngModel)]="pilotToDisplay.weightClass">
+      <option value="250">Ultra Light: 250g</option>
+      <option value="500">Standard: 500g</option>
+      <option value="750">Large Build: < 750g</option>
+    </select>
+    <br>
 
-  <label>Designated Frequency</label>
-  <input [(ngModel)]="pilotToDisplay.frequency">
-
-  <button (click)="updatePilot(pilotToDisplay)">Update</button>
-  <br>
-  <button routerLink="/roster" (click)="deletePilot(pilotToDisplay)">Delete</button>
+    <label>Designated Frequency</label>
+    <input [(ngModel)]="pilotToDisplay.frequency">
+    <br>
+    <label>Image URL</label>
+    <input [(ngModel)]="pilotToDisplay.image">
+    <br>
+    <a class="f6 b bt bb f5-l link bg-animate black-80 hover-bg-light-green dib pa3 ph4-l" (click)="updatePilot(pilotToDisplay)">Update</a>
+    <br><br>
+    <a class="f6 b bt bb f5-l link bg-animate black-80 hover-bg-light-red dib pa3 ph4-l" routerLink="/roster" (click)="deletePilot(pilotToDisplay)">Delete</a>
+  </div>
 </div>

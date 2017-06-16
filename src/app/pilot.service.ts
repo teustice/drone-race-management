@@ -35,7 +35,8 @@ export class PilotService {
     var pilotEntryInFirebase = this.getPilotById(localPilot.$key);
     pilotEntryInFirebase.update({name: localPilot.name,
                                 weightClass: localPilot.weightClass,
-                                frequency: localPilot.frequency});
+                                frequency: localPilot.frequency,
+                                image: localPilot.image});
   }
 
   deletePilot(pilot){

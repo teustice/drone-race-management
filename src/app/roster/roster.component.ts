@@ -21,8 +21,8 @@ export class RosterComponent implements OnInit {
     })
   }
 
-  submitForm(name: string, weight: string, frequency: string) {
-    var newPilot: Pilot = new Pilot(name, weight, frequency);
+  submitForm(name: string, weight: string, frequency: string, image: string) {
+    var newPilot: Pilot = new Pilot(name, weight, frequency, image);
     this.pilotService.addPilot(newPilot);
   }
 
