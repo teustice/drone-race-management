@@ -1,0 +1,20 @@
+{
+  "name": "drone-race-management",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Tanner Eustice <teustice@msn.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,23 @@
+{ "pilots": [
+  {
+    "name": "Pilot1",
+    "weightClass": "250",
+    "frequency": "5720"
+  },
+  {
+    "name": "Pilot2",
+    "weightClass": "500",
+    "frequency": "5870"
+  },
+  {
+    "name": "Pilot3",
+    "weightClass": "500",
+    "frequency": "5720"
+  },
+  {
+    "name": "Pilot4",
+    "weightClass": "250",
+    "frequency": "5870"
+  }
+  ]
+}
