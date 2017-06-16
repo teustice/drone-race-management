@@ -1,3 +1,4 @@
-<p>
-  roster works!
-</p>
+<h1>Current Pilots</h1>
+<ul>
+  <li *ngFor="let pilot of pilots | async">{{pilot.name}} | {{pilot.weightClass}} | {{pilot.frequency}}</li>
+</ul>
