@@ -1,8 +1,15 @@
 <h1>Current Pilots</h1>
 <button (click)="this.pilotService.adminMode()">Toggle Admin Mode</button>
 
+<select (change)="onChange($event.target.value)">
+  <option value="all" selected="selected">All Pilots</option>
+  <option value="250">250g Class</option>
+  <option value="500">500g Class</option>
+  <option value="750" >750g Class</option>
+</select>
+
 <ul>
-  <li *ngFor="let pilot of pilots | async" (click)="goToDetailPage(pilot)"><a>{{pilot.name}} | {{pilot.weightClass}}g | {{pilot.frequency}}Mhz</a></li>
+  <li *ngFor="let pilot of pilots | weight:weightSelected" (click)="goToDetailPage(pilot)"><a>{{pilot.name}} | {{pilot.weightClass}}g | {{pilot.frequency}}Mhz</a></li>
 </ul>
 
 <div *ngIf="this.pilotService.isAdmin">
@@ -16,7 +23,11 @@
   <div>
     <label>Drone Weight Class:</label>
     <br>
-    <input #weight>
+    <select #weight>
+      <option value="250">Ultra Light: 250g</option>
+      <option selected="selected" value="500">Standard: 500g</option>
+      <option value="750">Large Build: < 750g</option>
+    </select>
   </div>
 
   <div>

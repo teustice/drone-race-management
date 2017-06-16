@@ -11,11 +11,14 @@ import { Router } from '@angular/router';
   providers: [PilotService]
 })
 export class RosterComponent implements OnInit {
-  pilots: FirebaseListObservable<any[]>;
+  pilots = [];
+  weightSelected;
   constructor(private pilotService: PilotService, private router: Router) { }
 
   ngOnInit() {
-    this.pilots = this.pilotService.getPilots();
+    this.pilotService.getPilots().subscribe(data => {
+      this.pilots = data;
+    })
   }
 
   submitForm(name: string, weight: string, frequency: string) {
@@ -25,5 +28,9 @@ export class RosterComponent implements OnInit {
 
   goToDetailPage(clickedPilot) {
     this.router.navigate(['roster', clickedPilot.$key]);
-  };
+  }
+
+  onChange(weight) {
+    this.weightSelected = weight;
+  }
 }

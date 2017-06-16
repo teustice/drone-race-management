@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { RosterComponent } from './roster/roster.component';
 import { PilotDetailsComponent } from './pilot-details/pilot-details.component';
 import { AboutComponent } from './about/about.component';
+import { WeightPipe } from './weight.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     HomeComponent,
     RosterComponent,
     PilotDetailsComponent,
-    AboutComponent
+    AboutComponent,
+    WeightPipe
   ],
   imports: [
     BrowserModule,
