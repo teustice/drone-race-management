@@ -6,6 +6,7 @@ _This project is a simple way to organize fpv drone races._
 
 ```
 $ npm install
+$ npm install promise-polyfill --save-exact
 $ bower install
 ```
 * Create a file named `api-keys.ts` in your /src/app folder
