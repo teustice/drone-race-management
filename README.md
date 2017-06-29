@@ -30,6 +30,20 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+
+## Page Views
+
+_landing page:_
+![](https://github.com/niklaslong/chatroom/blob/master/public/img/landing-page.png?raw=true)
+_create an account:_
+![](https://github.com/niklaslong/chatroom/blob/master/public/img/create_account.png?raw=true)
+_view and edit profile info:_
+![](https://github.com/niklaslong/chatroom/blob/master/public/img/edit-profile.png?raw=true)
+_chat room:_
+![](https://github.com/niklaslong/chatroom/blob/master/public/img/chat-view.png?raw=true)
+_view user info:_
+![](https://github.com/niklaslong/chatroom/blob/master/public/img/view-user-info.png?raw=true)
+
 ## Further help
 
 For further help, please contact me through github.
